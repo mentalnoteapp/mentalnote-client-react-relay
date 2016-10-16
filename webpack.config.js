@@ -11,6 +11,7 @@ module.exports = {
         loader: 'babel',
         exclude: /node_modules/,
         query: {stage: 0}
+        //query: {stage: 0, plugins: ['./babelRelayPlugin']}
       }
     ]
   },
