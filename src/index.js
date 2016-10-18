@@ -4,39 +4,8 @@ import Relay from 'react-relay';
 
 //import { App, NoteRoute } from './components/App';
 
-class Note extends Component {
-  render() {
-    return (
-      <h2>{this.props.title}</h2>
-    )
-  }
-}
+import NoteList from './components/NoteList';
 
-class NoteList extends Component {
-  render() {
-    return(
-      <div>
-        {this.props.store.edges.map((elm) => <Note key={elm.node.id} title={elm.node.title}/>)} 
-      </div>
-    )
-  }
-}
-
-NoteList = Relay.createContainer(NoteList, {
-  fragments: {
-    store: () => Relay.QL`
-      fragment N on NoteNodeConnection {
-        edges {
-          node{
-            id
-            title
-            note
-          }
-        }
-      }
-    `
-  }
-});
 
 class NoteRoute extends Relay.Route {
   static routeName = 'NoteRoute';
