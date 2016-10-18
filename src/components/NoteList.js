@@ -19,9 +19,7 @@ NoteList = Relay.createContainer(NoteList, {
       fragment on NoteNodeConnection {
         edges {
           node{
-            id
-            title
-            note
+            ${Note.getFragment('store')}
           }
         }
       }
