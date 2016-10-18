@@ -7,7 +7,7 @@ class NoteList extends Component {
   render() {
     return(
       <div>
-        {this.props.store.edges.map((elm) => <Note key={elm.node.id} title={elm.node.title}/>)} 
+        {this.props.store.edges.map((elm, idx) => <Note key={idx} store={elm.node}/>)} 
       </div>
     )
   }
