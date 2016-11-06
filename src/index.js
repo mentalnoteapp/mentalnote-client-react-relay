@@ -12,6 +12,7 @@ class NoteRoute extends Relay.Route {
   static queries = {
     store: Component => {
 
+      debugger
       return Relay.QL`
       query {
         notes {

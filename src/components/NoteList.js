@@ -5,9 +5,11 @@ import Note from './Note';
 
 class NoteList extends Component {
   render() {
+    let notes = this.props.store.edges.map((elm, idx) => <Note key={idx} store={elm.node}/>);
     return(
       <div>
-        {this.props.store.edges.map((elm, idx) => <Note key={idx} store={elm.node}/>)} 
+        <h1>Mentalnotes</h1>
+        {notes} 
       </div>
     )
   }
